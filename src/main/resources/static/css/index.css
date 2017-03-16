@@ -34,3 +34,7 @@ h2{
     width: 60px;
     height: 60px;
 }
+
+.modal-content{
+    background-color: goldenrod;
+}
