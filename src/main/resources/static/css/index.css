@@ -39,3 +39,62 @@ h2{
 .modal-content{
     background-color: goldenrod;
 }
+
+.jumbotron{
+    background-color: #ffcc00;
+}
+
+
+#container{
+    border-radius: 25px;
+    font-size: 40px;
+    background-color: darkgoldenrod;
+    text-align: center;
+}
+
+.select-button{
+    background-color: goldenrod;
+    border-radius: 25px;
+}
+
+.select-button:hover{
+    background-color: darkgoldenrod;
+}
+
+.name-input{
+    background-color: goldenrod;
+    border-radius: 25px;
+}
+
+#playersDiv{
+    border-style: double;
+    border-color: black;
+    border-radius: 25px;
+    width: 20%;
+}
+
+#listDiv{
+    background-color: aqua;
+    border-radius: 25px;
+    position: absolute;
+    top: 77%;
+    width: 15%;
+}
+
+
+.questions{
+    border-radius: 25px;
+    border: solid;
+    border-color: black;
+    margin-bottom: 10px;
+}
+
+.japanese{
+    background-color: black;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 25px;
+    color: white;
+}
+
+
