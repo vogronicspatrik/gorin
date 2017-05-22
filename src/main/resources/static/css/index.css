@@ -26,9 +26,9 @@ h2{
     font-size: 24px;
     border-radius: 25px;
 }
-.btn:hover{
-    background-color: darkgoldenrod;
-}
+/*.btn:hover{*/
+    /*background-color: darkgoldenrod;*/
+/*}*/
 
 .links{
     border-radius: 25px;
@@ -57,9 +57,9 @@ h2{
     border-radius: 25px;
 }
 
-.select-button:hover{
-    background-color: darkgoldenrod;
-}
+    /*.select-button:hover{*/
+        /*background-color: goldenrod;*/
+    /*}*/
 
 .name-input{
     background-color: goldenrod;
@@ -95,6 +95,11 @@ h2{
     margin: 0 auto;
     border-radius: 25px;
     color: white;
+}
+
+
+.selected{
+    background-color: red;
 }
 
 
