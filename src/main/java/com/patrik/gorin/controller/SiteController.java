@@ -19,10 +19,10 @@ public class SiteController {
     @RequestMapping("/")
     public String index(){ return "index";}
 
-    @RequestMapping("/game")
-    public  String game(){
-        return "game";
-    }
+//    @RequestMapping("/game")
+//    public  String game(){
+//        return "game";
+//    }
 
     @RequestMapping("/childGame")
     public  String childGame(Model model){
