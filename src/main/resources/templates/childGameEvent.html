@@ -33,18 +33,21 @@
 
     <h1>Válaszd ki a helyes magyar megfelelőjét az alábbi japán kifejezéseknek!</h1>
 
-    <div class="questions" th:each="data, iterStat : ${datas}" data-th-attr="data-japanese=${data.getKey()}">
+    <div class="questions" th:each="data, iterStat : ${datas}" th:id="${data.getKey()}" data-th-attr="data-japanese=${data.getKey()}">
 
         <div class="japanese" th:text="${data.getKey()}"></div>
 
         <button th:each="oneResult, iterStat : ${data.getValue()}"
+                th:id="${data.getKey()} +'-'+ ${oneResult}"
                 data-th-attr="data-japanese=${data.getKey()}, data-hungarian=${oneResult}"
                 class="game-button btn btn-warning"
                 th:text="${oneResult}"></button>
 
     </div>
 
-    <button type="submit"  class="validate-button btn btn-default btn-lg btn-block">Kész</button>
+    <button type="submit" id="validate-button"  class="validate-button btn btn-default btn-lg btn-block">Kész</button>
+    <a href="/childGame" class="btn btn-default btn-lg btn-block">Új játék</a>
+
 
 
 </div>

@@ -66,31 +66,30 @@ public class ChildGameController {
     @ResponseBody
     public Map incomingData(@RequestBody String body) throws IOException {
 
-        System.out.println("atjoooott");
-
-        System.out.println(body);
-
-
-
         ObjectMapper mapper = new ObjectMapper();
         HashMap<String,String> result = mapper.readValue(body, HashMap.class);
 
-        System.out.println(result);
 
-
-        Map<String, String> response = new HashMap<>();
+        Map<String, ArrayList<String>> response = new HashMap<>();
 
 
         for ( Map.Entry<String, String> res : result.entrySet()){
 
+            Words actualWord = wordsRepository.findByJapaneseWord(res.getKey());
+            ArrayList<String> actualList = new ArrayList<>();
+            actualList.add(actualWord.getHungarianWord());
 
-
-
-
-
+            if(Objects.equals(actualWord.getHungarianWord(), res.getValue())){
+                actualList.add("true");
+                response.put(res.getKey(), actualList);
+            }
+            else{
+                actualList.add("false");
+                response.put(res.getKey(), actualList);
+            }
         }
 
 
-        return result;
+        return response;
     }
 }
