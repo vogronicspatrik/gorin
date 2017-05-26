@@ -33,53 +33,51 @@
 
 
 
-    <h1>Válaszd ki, hogy milyen nehézségű játékot szeretnél</h1>
-
-    <form th:action="'/startGame'" method="post">
-
-        <table class="table table-stripped floatedTable">
-            <thead>
-            <tr>
-                <th>Szint</th>
-                <th>Témakör</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <select name="rank"  required="required">
-                        <option value="number">1. kyu</option>
-                        <option value="bodyPart">2. kyu</option>
-                        <option value="bodyPart">3. kyu</option>
-                        <option value="bodyPart">4. kyu</option>
-                        <option value="bodyPart">5. kyu</option>
-                        <option value="bodyPart">6. kyu</option>
-                        <option value="bodyPart">7. kyu</option>
-                        <option value="bodyPart">8. kyu</option>
-                        <option value="bodyPart">9. kyu</option>
-                        <option value="bodyPart">10. kyu</option>
-                    </select>
-                </td>
-
-                <td>
-                    <select name="type"  required="required">
-                        <option value="all">Minden</option>
-                        <option value="number">Számok</option>
-                        <option value="bodyPart">Testrészek</option>
-                        <option value="commands">Vezényszavak</option>
-                        <option value="direction">Mozgási irányok</option>
-                    </select>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
-
-        <button type="submit"  class="btn btn-default btn-lg btn-block">Játék</button>
+    <h1>Válaszd ki, hogy milyen fajta játékot szeretnél</h1>
 
 
-    </form>
+    <div class="jumbotron selector">
+        <form th:action="'/gameWithType'" method="post">
 
+            <h2>Típus</h2>
+            <select class="btn" name="type"  required="required">
+                <option value="all">Minden</option>
+                <option value="number">Számok</option>
+                <option value="bodyPart">Testrészek</option>
+                <option value="commands">Vezényszavak</option>
+                <option value="direction">Mozgási irányok</option>
+            </select>
+
+
+
+            <button type="submit"  class="btn btn-default">Játék</button>
+
+        </form>
+    </div>
+
+    <div class="jumbotron selector">
+        <form th:action="'/gameWithRank'" method="post">
+
+            <h2>Szint</h2>
+            <select class="btn" name="rank"  required="required">
+                <option value="10">10. kyu</option>
+                <option value="9">9. kyu</option>
+                <option value="8">8. kyu</option>
+                <option value="7">7. kyu</option>
+                <option value="6">6. kyu</option>
+                <option value="5">5. kyu</option>
+                <option value="4">4. kyu</option>
+                <option value="3">3. kyu</option>
+                <option value="2">2. kyu</option>
+                <option value="1">1. kyu</option>
+            </select>
+
+
+
+            <button type="submit"  class="btn btn-default">Játék</button>
+
+        </form>
+    </div>
 
 
 </div>

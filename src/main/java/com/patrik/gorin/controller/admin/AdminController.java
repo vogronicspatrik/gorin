@@ -27,9 +27,10 @@ public class AdminController {
     public String addWord(@RequestParam(value = "type") String type,
                           @RequestParam(value = "hungarianWord") String hungarianWord,
                           @RequestParam(value = "japaneseWord") String japaneseWord,
+                          @RequestParam(value = "rank") String rank,
                           Model model){
 
-        Words newWord = new Words(type, hungarianWord, japaneseWord);
+        Words newWord = new Words(type, Integer.valueOf(rank),  hungarianWord, japaneseWord);
         wordsRepository.save(newWord);
         return "redirect:/admin";
     }
@@ -37,8 +38,6 @@ public class AdminController {
     @RequestMapping("/delete/{values_id}")
     public String delete(@PathVariable Integer values_id){
 
-
-        System.out.println("anyad");
         wordsRepository.delete(Long.valueOf(values_id));
         return "redirect:/admin";
     }

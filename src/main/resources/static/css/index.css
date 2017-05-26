@@ -102,4 +102,13 @@ h2{
     background-color: gray;
 }
 
+.selector{
+
+    width: 50%;
+    border-radius: 25px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 

@@ -41,6 +41,7 @@
         <tr>
             <th>ID</th>
             <th>Type</th>
+            <th>Rank</th>
             <th>Hungarian Word</th>
             <th>Japanese Word</th>
         </tr>
@@ -49,6 +50,7 @@
         <tr th:each="word, iterStat : ${words}">
             <td th:text="${word.getID()}">ID</td>
             <td th:text="${word.getType()}">Type</td>
+            <td th:text="${word.getRank()}">Rank</td>
             <td th:text="${word.getHungarianWord()}">Hungarian Word</td>
             <td th:text="${word.getJapaneseWord()}">Japanese Word</td>
             <td>
@@ -76,6 +78,7 @@
                             <thead>
                             <tr>
                                 <th>Type</th>
+                                <th>Rank</th>
                                 <th>Hungarian Word</th>
                                 <th>Japanese Word</th>
                             </tr>
@@ -88,6 +91,20 @@
                                         <option value="bodyPart">Body Part</option>
                                         <option value="direction">Direction</option>
                                         <option value="commands">Commands</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="rank"  required="required">
+                                        <option value="1">1.kyu</option>
+                                        <option value="2">2.kyu</option>
+                                        <option value="3">3.kyu</option>
+                                        <option value="4">4.kyu</option>
+                                        <option value="5">5.kyu</option>
+                                        <option value="6">6.kyu</option>
+                                        <option value="7">7.kyu</option>
+                                        <option value="8">8.kyu</option>
+                                        <option value="9">9.kyu</option>
+                                        <option value="10">10.kyu</option>
                                     </select>
                                 </td>
                                 <td><input style="width: 140px" placeholder="Hungarian Word" name="hungarianWord"/></td>

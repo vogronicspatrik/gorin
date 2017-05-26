@@ -12,13 +12,15 @@ public class Words {
 
     Long ID;
     String type;
+    Integer rank;
     String hungarianWord;
     String japaneseWord;
 
 
     public Words() {}
 
-    public Words(String type, String hungarianWord, String japaneseWord) {
+    public Words(String type, Integer rank,  String hungarianWord, String japaneseWord) {
+        this.rank = rank;
         this.type = type;
         this.hungarianWord = hungarianWord;
         this.japaneseWord = japaneseWord;
@@ -28,6 +30,10 @@ public class Words {
     @Id
     public Long getID() {
         return ID;
+    }
+
+    public Integer getRank() {
+        return rank;
     }
 
     public String getType() {
@@ -48,6 +54,10 @@ public class Words {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 
     public void setHungarianWord(String hungarianWord) {

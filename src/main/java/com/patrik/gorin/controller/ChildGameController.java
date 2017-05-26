@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.patrik.gorin.model.Words;
 import com.patrik.gorin.repository.WordsRepository;
+import com.patrik.gorin.service.GameService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,10 +26,11 @@ public class ChildGameController {
 
     @Autowired
     WordsRepository wordsRepository;
+    @Autowired
+    GameService gameService;
 
-    @RequestMapping("/startGame")
-    public String startGame(@RequestParam(value = "rank") String rank,
-                            @RequestParam(value = "type") String type,
+    @RequestMapping("/gameWithType")
+    public String gameWithType(@RequestParam(value = "type") String type,
                             Model model){
 
 
@@ -36,31 +38,25 @@ public class ChildGameController {
         List<Words> listOfWords;
 
         if(type.equals("all")){
-            listOfWords = wordsRepository.findAll();
+            listOfWords = gameService.chooseRandomsFromDatabase(wordsRepository.findAll(), 5);
         } else {
-            listOfWords = wordsRepository.findByType(type);
+            listOfWords = gameService.chooseRandomsFromDatabase(wordsRepository.findByType(type), 5);
         }
-
-        Map<String, List> data = new HashMap<>();
-
         Collections.shuffle(listOfWords);
 
-        for(Words word : listOfWords){
-            List<String> listOfResults = new ArrayList<>();
-            listOfResults.add(word.getHungarianWord());
-
-            for(Words badWord : listOfAll){
-                Collections.shuffle(listOfAll);
-                if(!listOfResults.contains(badWord.getHungarianWord()) && listOfResults.size() < 3){
-                    listOfResults.add(badWord.getHungarianWord());
-                }
-            }
-            Collections.shuffle(listOfResults);
-            data.put(word.getJapaneseWord(), listOfResults);
-        }
-        model.addAttribute("datas", data);
+        model.addAttribute("datas", gameService.collectModelContent(listOfAll, listOfWords, 5));
         return "childGameEvent";
     }
+
+    @RequestMapping("/gameWithRank")
+    public String gameWithRank(@RequestParam(value = "rank") String rank,
+                               Model model){
+
+
+        return "childGameEvent";
+    }
+
+
 
     @RequestMapping("/get_data")
     @ResponseBody
