@@ -15,6 +15,6 @@ public interface WordsRepository extends JpaRepository<Words, Long> {
 
     List<Words> findByType(String type);
     Words findByJapaneseWord(String word);
-
+    List<Words> findByRank(Integer rank);
 
 }

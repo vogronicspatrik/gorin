@@ -33,9 +33,10 @@ public class ChildGameController {
     public String gameWithType(@RequestParam(value = "type") String type,
                             Model model){
 
-
         List<Words> listOfAll = wordsRepository.findAll();
         List<Words> listOfWords;
+
+
 
         if(type.equals("all")){
             listOfWords = gameService.chooseRandomsFromDatabase(wordsRepository.findAll(), 5);
@@ -44,7 +45,7 @@ public class ChildGameController {
         }
         Collections.shuffle(listOfWords);
 
-        model.addAttribute("datas", gameService.collectModelContent(listOfAll, listOfWords, 5));
+        model.addAttribute("datas", gameService.collectModelContent(listOfAll, listOfWords, 3));
         return "childGameEvent";
     }
 
@@ -52,7 +53,21 @@ public class ChildGameController {
     public String gameWithRank(@RequestParam(value = "rank") String rank,
                                Model model){
 
+        List<Words> listOfAll = wordsRepository.findAll();
 
+
+        Integer actucalRank = Integer.valueOf(rank);
+        Integer numberOfButtons = 3;
+        List<Words> listOfWords = wordsRepository.findByRank(actucalRank);
+
+        switch (actucalRank){
+
+
+            case 10 :
+
+        }
+
+        model.addAttribute("datas", gameService.collectModelContent(listOfAll, listOfWords, numberOfButtons));
         return "childGameEvent";
     }
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="Gorin, Kispest, Karate, Küzdősport, Önvédelem, Sport, Goju"/>
+    <meta name="description" content="Gorin KSE hivatalos weboldala"/>
+    <meta name="author" content="Vogronics Patrik"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gorin KSE</title>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/css/otherGame.css" />
+
+
+</head>
+<body>
+<div class="header">
+    <div class="img"> <img src="/images/gorin.png" /></div>
+</div>
+
+<h1>Karate Történet</h1>
+
+
+
+<h2><input class="input-field"/> Chojun sensei <input class="input-field"/> április 25-én született <input class="input-field"/>-ban. Miyagi sensei családja a nemesi
+    osztályhoz tartozott. A Miyagi család orvosságok behozatalával foglalkozott Kínából
+    (két kereskedőhajójuk volt) ellátva mind a kormányt, mind az egyéni kereskedőket.
+    A család egyike volt a leggazdagabbaknak Naha-ban. Miyagi sensei apját Miyagi Chosho-nak hívták.
+    ő volt a Miyagi családban a harmadik fiú. Amikor Miyagi Chojun sensei 5 éves lett,
+    a család örököse meghalt. Így Miyagi Chojun sensei-t örökbe fogadta a család örökösként,
+    így lett ő első fia az apjának.
+    Mikor Miyagi sensei 11 éves volt, az anyja elvitte egy karate mesterhez,
+    akit Aragaki Ryuko-nak hívtak. (Aragaki Ryuko sensei a nagyapja Aragaki Shuichi-nek,
+    aki ma az International Okinawa Goju Ryu Karate-do Federation tanácsadója).
+    A Meiji restauráció és a kínai-japán háború alatt átélt nehéz és viharos évek meggyőzték Miyagi sensei
+    anyját arról, hogy egy férfinek szellemileg és fizikailag egyaránt erősnek kell lennie azért,
+    hogy szembenézzen a világgal, mint a család feje. Aragaki Ryuko sensei dojo-jában,
+    Miyagi sensei főként Makiwara-t, chishi-t és nigira-game-t használt edzés közben,
+    melyek az izmok erősítésére és fejlesztésére szolgáltak. Aragaki sensei bemutatta fiatal tanítványát,
+    Miyagi sensei-t, barátjának, <input class="input-field"/> Kanryo sensei-nek, mikor Miyagi sensei 14 éves volt.
+</h2>
+
+
+<button type="submit" id="finish-button"  class="finish-button validate-button btn btn-default btn-lg btn-block">Kész</button>
+
+
+<script th:src="@{/js/otherGame.js}"></script>
+
+</body>
+</html>
